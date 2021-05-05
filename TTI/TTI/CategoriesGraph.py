@@ -24,7 +24,7 @@ class SingletonMetaClass(type):
 
 class CategoriesGraph(metaclass=SingletonMetaClass):
     """
-    Provides abstraction for the Categories graph. 
+    Provides abstraction for the Categories graph.
     Its singleton importing data from data/wikipedia_topics_nowikidata.csv, creating networkx graph from it.
     """
 
@@ -42,7 +42,7 @@ class CategoriesGraph(metaclass=SingletonMetaClass):
 
     @property
     def categories(self):
-        return self._graph.nodes
+        return [i[9:] for i in self._graph.nodes]
 
 
 if __name__ == "__main__":

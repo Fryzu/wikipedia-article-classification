@@ -139,3 +139,9 @@ cython_debug/
 
 # IDE
 .vscode/
+
+# models
+models/
+
+# mac
+.DS_Store
