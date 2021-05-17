@@ -25,4 +25,4 @@ def getNodeWordSet(node, graph, numberOfWords=50, debug=False):
         for neighbourNode in neighbors:
             bfsQueue.insert(0, neighbourNode)
 
-    return resultSet
+    return list(resultSet)

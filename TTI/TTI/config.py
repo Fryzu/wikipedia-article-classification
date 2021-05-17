@@ -1,5 +1,8 @@
 import os
 
-base_path = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+BASE_PATH = os.path.dirname(os.path.dirname(
+    os.path.abspath(os.path.dirname(__file__))))
 
-CATEGORIES_PATH = os.path.join(base_path, "data", "wikipedia_topics_nowikidata.csv")
+DATA_DIR = os.path.join(BASE_PATH, "data")
+
+CATEGORIES_PATH = os.path.join(DATA_DIR, "wikipedia_topics_nowikidata.csv")
