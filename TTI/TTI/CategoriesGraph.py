@@ -31,6 +31,10 @@ class CategoriesGraph(metaclass=SingletonMetaClass):
     _graph = None
     _edge_list = None
 
+    def getNeighbors(self, node):
+        return self._graph.neighbors(
+            node)
+
     def __init__(self):
         print("Reading topics graph")
         topic_nodes = pd.read_csv(CATEGORIES_PATH)
