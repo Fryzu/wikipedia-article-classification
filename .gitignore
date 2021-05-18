@@ -145,3 +145,6 @@ models/
 
 # mac
 .DS_Store
+
+# huge datasets
+data/training_set_*.csv
