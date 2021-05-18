@@ -13,4 +13,4 @@ def encode_article(content):
     vector_representation = doc2vec.infer_vector(
         formatted_content, alpha=start_alpha, steps=infer_epoch)
 
-    return vector_representation
+    return [float(i) for i in vector_representation]
