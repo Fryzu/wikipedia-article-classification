@@ -148,3 +148,4 @@ models/
 
 # huge datasets
 data/training_set_*.csv
+data/database.db
