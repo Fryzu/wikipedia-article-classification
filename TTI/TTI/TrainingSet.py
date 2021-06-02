@@ -14,10 +14,13 @@ def getNodeWordSet(node, graph, numberOfWords=50, debug=False):
         currentNodeName = currentNode[9:]
         if debug:
             print("Currently visiting:", currentNodeName)
+
+        stoplist = set(['for', 'a', 'of', 'the', 'and', 'to', 'in'])
+
         # Adds current node words
         words = currentNodeName.split()
         for word in words:
-            if len(resultSet) < numberOfWords:
+            if len(resultSet) < numberOfWords and word not in stoplist:
                 resultSet.add(word.lower())
 
         neighbors = [i for i in graph.getNeighbors(
