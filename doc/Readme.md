@@ -1,10 +1,16 @@
 # Taksonomia, identyfikacja tekstu
 
-Dany jest fragment hierarchii klasyfkacji tematycznej z Wikipedii (https://en.wikipedia.org/wiki/Category:Main_topic_classifications) w postaci pliku CSV.
-Klasyfkacja jest grafem spójnym, gdzie węzły są tematami, a krawędzie reprezentują uszczegółowienie tematu.
+Rozwiązanie problemu automatycznej klasyfikacji artykułów Wikipedii przy użyciu `doc2vec`, `NER` oraz algorytmów analizy grafu. 
 
-Celem projektu jest zapropnowanie i przetestowanie mechanizmu automatycznej klasyfikacji tekstu Wejściem jest plik tekstowy w języku angielskim. Wyjściem jest zbiór węzłów w/w klasyfikacji tematycznej.
+## Repozytorium
 
-## Dane wejściowe
+### Notatniki
 
-Dane wejściowe do zadania do graf spójny o 225765 węzłach, kady węzeł reprezentuje jedną kategorię. Graf nie jest uporządkowanym drzewem, może również zawierać pętle.
+* `notebooks/01-tti-classify.ipynb` główny plik Jupyter Notebook przedstawiający rozwiązanie zadania,
+* `notebooks/01-tti-prepare-document.ipynb`  notatnik przedstawiający proces ściągania oraz przygotowania arytkułu do klasyfikacji,
+* `notebooks/01-tti-training-set-generate.ipynb` plik generujący wektory reprezentacji numerycznej poszczególnych kategorii
+
+### Dodatkowe moduły
+
+`TTI/*`
+
