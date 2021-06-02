@@ -6,9 +6,11 @@ BASE_URL = "https://en.wikipedia.org/w/api.php"
 def clean_document(document):
     words = document.split()
 
+    character_blocklist = ["}", "{", "^", "*", "\\", "(", ")", "|", "=", "\""]
+
     cleaned_words = []
     for word in words:
-        if len(word) > 1:
+        if len(word) > 1 and not any(ext in word for ext in character_blocklist):
             cleaned_words.append(word)
 
     return " ".join(cleaned_words)
