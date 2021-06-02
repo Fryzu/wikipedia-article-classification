@@ -1,4 +1,8 @@
 import requests
+import spacy
+from collections import Counter
+from .doc2vec import encode_article
+
 
 BASE_URL = "https://en.wikipedia.org/w/api.php"
 
@@ -35,5 +39,19 @@ def get_article_content(title):
     return clean_document(content)
 
 
-def extract_key_words(document):
-    pass
+def get_document_representation(document, words_count=50):
+    nlp = spacy.load("en_core_web_sm")
+    doc = nlp(document)
+
+    # Extract nouns
+    words = [token.lemma_ for token in doc if token.pos_ == "NOUN"]
+
+    counter = Counter(words)
+    most_common_words = [w[0] for w in counter.most_common(words_count)]
+
+    word_representation = most_common_words
+
+    article_description = " ".join(most_common_words)
+    vector_representation = encode_article(article_description)
+
+    return {"vector": vector_representation, "words": word_representation}
