@@ -7,7 +7,7 @@ def getNodeWordSet(node, graph, numberOfWords=50, debug=False):
 
     bfsQueue = [node]
 
-    while len(resultSet) < 50 and bfsQueue:
+    while len(resultSet) < numberOfWords and bfsQueue:
         currentNode = bfsQueue.pop()
         alreadySeenNodes.add(currentNode)
 
@@ -20,7 +20,7 @@ def getNodeWordSet(node, graph, numberOfWords=50, debug=False):
         # Adds current node words
         words = currentNodeName.split()
         for word in words:
-            if len(resultSet) < numberOfWords and word not in stoplist:
+            if (len(resultSet) < numberOfWords) and (word not in stoplist):
                 resultSet.add(word.lower())
 
         neighbors = [i for i in graph.getNeighbors(
