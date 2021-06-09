@@ -14,8 +14,6 @@ Rozwiązanie problemu automatycznej klasyfikacji artykułów Wikipedii przy uży
 
 `TTI/*`
 
-## Instrukcja uruchomienia
-
 # Dokumentacja projektu
 
 ## Wymagania
